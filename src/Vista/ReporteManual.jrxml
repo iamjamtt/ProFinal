@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4e22bda-2462-4e85-a5da-0d436e93bed2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM ManuAuto ma INNER JOIN ModoOrigen mo ON ma.idModoOrigen=mo.idModoOrigen INNER JOIN Semaforo se ON ma.idSemaforo=se.idSemaforo WHERE mo.idModoOrigen=1]]>
+	</queryString>
+	<field name="idManuAuto" class="java.lang.Integer"/>
+	<field name="CodigoManuAuto" class="java.lang.String"/>
+	<field name="fecha" class="java.sql.Timestamp"/>
+	<field name="hora" class="java.lang.String"/>
+	<field name="estadoSemaforo" class="java.lang.Integer"/>
+	<field name="velocidadAuto" class="java.math.BigDecimal"/>
+	<field name="idModoOrigen" class="java.lang.Integer"/>
+	<field name="idSemaforo" class="java.lang.Integer"/>
+	<field name="idUsuario" class="java.lang.Integer"/>
+	<field name="idSensor" class="java.lang.Integer"/>
+	<field name="idImagenCarro" class="java.lang.Integer"/>
+	<field name="descripcionMO" class="java.lang.String"/>
+	<field name="descripcionSemaforo" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="74e344db-2da0-4126-98a5-faa4f40b16ec" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="484d1ec9-f52f-46df-90a8-e371b3d69544" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Manual]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="181a736b-ec78-43c6-9ee7-ae630d76591a" x="395" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Mtc-Pucallpa]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="9b4cd4c7-d971-4fbf-a107-661ad53f6e86" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="a8f8277a-c1db-4910-a3b7-96269bc47d17" mode="Opaque" x="0" y="0" width="41" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="735718d2-1b80-4b6f-bbae-78dbc7def12a" mode="Opaque" x="41" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d71b9901-0a52-442a-8af1-e3688b852513" mode="Opaque" x="110" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLACA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="86b55ff0-40e8-446c-8e75-d6fc578a8df3" mode="Opaque" x="179" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SENSOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1bfe8185-e0ac-4a63-8905-d26b01d20977" mode="Opaque" x="248" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VELOCIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="01dc2641-0fa2-4d68-9345-5c973f929e2d" mode="Opaque" x="317" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMAFORO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="66bd1f04-f4fa-4125-8639-4097e80ee94a" mode="Opaque" x="386" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9adf6c8d-0f4d-4e35-919a-540336520100" mode="Opaque" x="455" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement uuid="40547e22-7144-41d6-b52b-174d1f9e6d17" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c72db397-c704-4a63-a6c1-f6e445a4b816" x="0" y="0" width="41" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idManuAuto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c5dd2c75-a4d4-4aa6-b591-8b14c2db8ece" x="41" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionMO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="bc1e88a5-e6af-4272-9c5c-9fb02b5cbeea" x="179" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idSensor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="f974c9e4-3499-4705-bcfd-9ace23f825c8" x="248" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{velocidadAuto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="7ca732f0-8e71-429d-b465-b84430807461" x="317" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionSemaforo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="3cd070f3-c2fe-4220-befa-2a2848654898" x="386" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fb93a763-2eba-423f-888c-ad52f78d8dd0" x="455" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e0f5461b-fefb-4767-90f4-e248a28e3d61" x="110" y="0" width="69" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CodigoManuAuto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="9266297f-68a9-400a-a2e6-589728ed1212" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="2401e8dc-2384-4ba5-80f7-7ee55d58d4b9" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="4d693022-05ed-466f-a155-7ce8a4a3f76f" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
