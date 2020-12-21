@@ -33,8 +33,5 @@ public class GenerarCodigos {
     {
         return this.num;
     }
-    
-    
-    
-    
+ 
 }

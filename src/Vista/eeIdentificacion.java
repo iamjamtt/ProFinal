@@ -134,7 +134,7 @@ public class eeIdentificacion extends javax.swing.JFrame {
                     if(btnIniciarBucle.isVisible()==false){
                         btnSiguiente.setVisible(false);
                         if(btnGuardarEstadoSemaforo.isVisible()==true || btnGuardarEstadoSemaforo1.isVisible()==true || btnGuardarEstadoSemaforo2.isVisible()==true){
-                            if(velocidadRamdon<50){
+                            if(velocidadRamdon>=50){
                                 ImageIcon verde = new ImageIcon("src/Imagenes/SemaforoVerde.png");
                                 txtImagenSemaforo.setIcon(verde);
                                 if(sensor==1){

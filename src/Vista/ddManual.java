@@ -162,7 +162,7 @@ public class ddManual extends javax.swing.JInternalFrame {
     
     //se cambio
     public static void bucleManual(){
-        velocidadRamdon = (int) ((60*Math.random()) + 20);
+        velocidadRamdon = (int) ((40*Math.random()) + 30);
         
         if(sensor==0){
             fotoAuto = (int) ((9*Math.random()) + 1);
@@ -305,22 +305,35 @@ public class ddManual extends javax.swing.JInternalFrame {
         }
     }
     
+    public static void pause2(int valor){
+        javax.swing.Timer timerrr = new javax.swing.Timer(valor,null);
+        timerrr.addActionListener((e)->{
+            System.out.println("Tiempo transcurrido");
+            timerrr.stop();
+        });
+        timerrr.start();
+    }
     
     public static void bucleAutoRetro(){
         int distancia;
-        distancia=150;
-        tiempo=(distancia/velocidadRamdon)-1;
-        System.out.println("/nTiempo "+ tiempo + "\n");
+        distancia=75;
+        double velocidadR;
         
-        
-        for(int i=0; i<tiempo; i++){
-            pause();
-        }
+            velocidadR=(velocidadRamdon*1000)/3600;
+            System.out.println("Velocidad en metos=====> " + velocidadR);
+            tiempo=(int) (distancia/velocidadR);
+            //tiempo=tiempo*1000;
+            System.out.println("/nTiempo "+ tiempo + "\n");
+
+            for(int i=0; i<tiempo; i++){
+                pause();
+                System.out.println("Segungo " + (i+1));
+            }
         
     }
     
     public static void bucleAuto(){
-        velocidadRamdon = (int) ((60*Math.random()) + 20);
+        velocidadRamdon = (int) ((40*Math.random()) + 30);
         
         if(sensor==0){
             fotoAuto = (int) ((9*Math.random()) + 1);
@@ -375,7 +388,7 @@ public class ddManual extends javax.swing.JInternalFrame {
                 txtHora.setText("");
                 txtHora.setText(horaM);
                 
-                if(velocidadRamdon<50){
+                if(velocidadRamdon>=50){
                     ImageIcon verde = new ImageIcon("src/Imagenes/SemaforoVerde.png");
                     txtImagenSemaforo.setIcon(verde);
                     jrVerde.setSelected(true);
@@ -412,7 +425,7 @@ public class ddManual extends javax.swing.JInternalFrame {
                 txtHora1.setText("");
                 txtHora1.setText(horaM);
                 
-                if(velocidadRamdon<50){
+                if(velocidadRamdon>=50){
                     ImageIcon verde = new ImageIcon("src/Imagenes/SemaforoVerde.png");
                     txtImagenSemaforo.setIcon(verde);
                     jrVerde1.setSelected(true);
@@ -450,7 +463,7 @@ public class ddManual extends javax.swing.JInternalFrame {
                 txtHora2.setText("");
                 txtHora2.setText(horaM);
                 
-                if(velocidadRamdon<50){
+                if(velocidadRamdon>=50){
                     ImageIcon verde = new ImageIcon("src/Imagenes/SemaforoVerde.png");
                     txtImagenSemaforo.setIcon(verde);
                     jrVerde2.setSelected(true);
@@ -476,7 +489,7 @@ public class ddManual extends javax.swing.JInternalFrame {
             
             ingresarDatos();
             
-            //bucleAutoRetro();
+            bucleAutoRetro();
         }
     }
     
@@ -529,7 +542,7 @@ public class ddManual extends javax.swing.JInternalFrame {
                     contador=1;
                 }
             };
-            timer.scheduleAtFixedRate(task, 2500, 2500); 
+            timer.scheduleAtFixedRate(task, 2000, 2000); 
     }
 
     /**
@@ -1388,7 +1401,8 @@ public class ddManual extends javax.swing.JInternalFrame {
         System.out.println("Estado Manual == " + estado);
         
         if(contador==1){
-            ddManual.timer.cancel();
+            timer.cancel();
+            timer.purge();
             contador=0;
         }
         
