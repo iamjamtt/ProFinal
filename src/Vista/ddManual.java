@@ -329,7 +329,6 @@ public class ddManual extends javax.swing.JInternalFrame {
                 pause();
                 System.out.println("Segungo " + (i+1));
             }
-        
     }
     
     public static void bucleAuto(){
